@@ -35,3 +35,5 @@ theorem theoremB (hcells : ∀ m ∈ reps45, m ∉ fkReps → CellEmpty (dec m))
   · exact hcells _ hr hf L v hL hE
 
 end PEqualNP.Gct.Scratch219.B45
+
+#print axioms PEqualNP.Gct.Scratch219.B45.theoremB
