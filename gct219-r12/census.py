@@ -46,6 +46,10 @@ def run(a):
     return res
 if __name__ == '__main__':
     if len(sys.argv) > 1: todo = todo[:int(sys.argv[1])]
+    done = set()
+    if os.path.exists(f'census_{P}.jsonl'):
+        done = {tuple(json.loads(l)['S']) for l in open(f'census_{P}.jsonl') if l.strip()}
+    todo = [a for a in todo if a[1] not in done]
     with ThreadPoolExecutor(2) as ex, open(f'census_{P}.jsonl', 'a') as fh:
         for r in ex.map(run, todo):
             fh.write(json.dumps(r) + '\n'); fh.flush(); print(json.dumps(r), flush=True)
