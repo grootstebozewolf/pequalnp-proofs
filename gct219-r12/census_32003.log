@@ -9,3 +9,4 @@
 {"S": [1, 2, 3, 5, 6, 10, 15], "status9": "O", "unknowns": 63, "clp": "RESULT substituted=4 unknowns_left=59 gens=922 maxdeg=4", "clp_sec": 12.6, "ms_rc": 75, "ms_err": "msolve: out of memory: allocation of 1 x 49220 bytes failed (hash.c:2430)\n", "msolve": "oom", "ms_head": "", "ms_sec": 127.4}
 {"S": [0, 1, 2, 6, 7, 10, 15], "status9": "O", "unknowns": 64, "clp": "RESULT substituted=11 unknowns_left=53 gens=1200 maxdeg=6", "clp_sec": 27.4, "msolve": "TIMEOUT", "ms_sec": 1800.5}
 {"S": [0, 2, 3, 5, 6, 10, 15], "status9": "O", "unknowns": 64, "clp": "RESULT substituted=12 unknowns_left=52 gens=930 maxdeg=4", "clp_sec": 18.1, "msolve": "TIMEOUT", "ms_sec": 1800.5}
+{"S": [2, 3, 4, 5, 6, 10, 11], "status9": "O", "unknowns": 64, "ms_rc": 0, "ms_err": "", "msolve": "unit", "ms_head": "#Reduced Groebner basis data\n#---\n#field characteristic: 32003\n#variable order:       a0_7, a0_8, a0_9, a0_12, a0_13, a0", "ms_sec": 723.7}
