@@ -1,0 +1,33 @@
+{"S": [1, 2, 5, 6, 10, 11, 15], "status9": "M_p", "unknowns": 55, "minors": 3846, "clp": "RESULT substituted=22 unknowns_left=33 gens=1068 maxdeg=4", "clp_sec": 85.5, "msolve": "unit", "ms_sec": 18.6}
+{"S": [0, 2, 5, 6, 10, 11, 15], "status9": "O", "unknowns": 56, "minors": 4055, "clp": "RESULT substituted=19 unknowns_left=37 gens=1201 maxdeg=4", "clp_sec": 95.6, "msolve": "fail", "ms_sec": 115.9}
+{"S": [0, 1, 5, 6, 10, 11, 15], "status9": "O", "unknowns": 57, "minors": 4139, "clp": "RESULT substituted=18 unknowns_left=39 gens=1221 maxdeg=4", "clp_sec": 97.9, "msolve": "fail", "ms_sec": 26.2}
+{"S": [1, 2, 3, 6, 7, 10, 15], "status9": "M_p", "unknowns": 61, "minors": 1664, "clp": "RESULT substituted=7 unknowns_left=54 gens=1212 maxdeg=5", "clp_sec": 16.1, "msolve": "fail", "ms_sec": 37.4}
+{"S": [0, 1, 3, 6, 7, 10, 15], "status9": "M_p", "unknowns": 63, "minors": 1850, "clp": "RESULT substituted=12 unknowns_left=51 gens=1140 maxdeg=6", "clp_sec": 22.8, "msolve": "fail", "ms_sec": 44.5}
+{"S": [0, 2, 3, 5, 6, 11, 15], "status9": "M_p", "unknowns": 63, "minors": 2309, "clp": "RESULT substituted=16 unknowns_left=47 gens=1293 maxdeg=6", "clp_sec": 33.9, "msolve": "unit", "ms_sec": 38.9}
+{"S": [1, 2, 3, 5, 6, 10, 15], "status9": "O", "unknowns": 63, "minors": 1429, "clp": "RESULT substituted=4 unknowns_left=59 gens=922 maxdeg=4", "clp_sec": 10.9, "msolve": "fail", "ms_sec": 71.0}
+{"S": [0, 1, 2, 6, 7, 10, 15], "status9": "O", "unknowns": 64, "minors": 1930, "clp": "RESULT substituted=11 unknowns_left=53 gens=1200 maxdeg=6", "clp_sec": 25.1, "msolve": "fail", "ms_sec": 138.9}
+{"S": [0, 2, 3, 5, 6, 10, 15], "status9": "O", "unknowns": 64, "minors": 1627, "clp": "RESULT substituted=12 unknowns_left=52 gens=930 maxdeg=4", "clp_sec": 16.9, "msolve": "fail", "ms_sec": 34.0}
+{"S": [2, 3, 4, 5, 6, 10, 11], "status9": "O", "unknowns": 64, "minors": 673, "clp": "RESULT substituted=6 unknowns_left=58 gens=720 maxdeg=3", "clp_sec": 4.7, "msolve": "fail", "ms_sec": 40.6}
+{"S": [0, 1, 2, 5, 6, 11, 15], "status9": "O", "unknowns": 65, "minors": 2620, "clp": "RESULT substituted=16 unknowns_left=49 gens=1400 maxdeg=6", "clp_sec": 45.5, "msolve": "fail", "ms_sec": 96.6}
+{"S": [0, 1, 2, 5, 6, 10, 15], "status9": "O", "unknowns": 66, "minors": 1676, "clp": "RESULT substituted=4 unknowns_left=62 gens=965 maxdeg=4", "clp_sec": 17.5, "msolve": "fail", "ms_sec": 50.3}
+{"S": [1, 2, 3, 5, 7, 10, 11], "status9": "O", "unknowns": 66, "minors": 1244, "clp": "RESULT substituted=13 unknowns_left=53 gens=790 maxdeg=4", "clp_sec": 11.9, "msolve": "fail", "ms_sec": 80.4}
+{"S": [0, 1, 2, 3, 6, 10, 15], "status9": "O", "unknowns": 68, "minors": 2366, "clp": "RESULT substituted=16 unknowns_left=52 gens=225 maxdeg=5", "clp_sec": 46.1, "msolve": "fail", "ms_sec": 68.1}
+{"S": [0, 1, 3, 5, 7, 10, 11], "status9": "O", "unknowns": 68, "minors": 1194, "clp": "RESULT substituted=12 unknowns_left=56 gens=731 maxdeg=4", "clp_sec": 12.6, "msolve": "fail", "ms_sec": 69.2}
+{"S": [0, 2, 3, 5, 6, 10, 11], "status9": "O", "unknowns": 68, "minors": 911, "clp": "RESULT substituted=6 unknowns_left=62 gens=736 maxdeg=4", "clp_sec": 7.8, "msolve": "fail", "ms_sec": 84.6}
+{"S": [1, 2, 3, 6, 7, 8, 10], "status9": "O", "unknowns": 68, "minors": 1022, "clp": "RESULT substituted=12 unknowns_left=56 gens=629 maxdeg=3", "clp_sec": 9.5, "msolve": "fail", "ms_sec": 226.2}
+{"S": [0, 1, 2, 3, 5, 10, 15], "status9": "O", "unknowns": 69, "minors": 2380, "clp": "RESULT substituted=12 unknowns_left=57 gens=217 maxdeg=4", "clp_sec": 41.7, "msolve": "fail", "ms_sec": 150.2}
+{"S": [0, 1, 2, 5, 7, 10, 11], "status9": "O", "unknowns": 69, "minors": 1154, "clp": "RESULT substituted=13 unknowns_left=56 gens=710 maxdeg=4", "clp_sec": 12.8, "msolve": "fail", "ms_sec": 86.2}
+{"S": [1, 3, 4, 5, 6, 7, 10], "status9": "M_p", "unknowns": 69, "minors": 831, "clp": "TIMEOUT"}
+{"S": [0, 1, 2, 5, 6, 10, 11], "status9": "O", "unknowns": 70, "minors": 970, "clp": "RESULT substituted=6 unknowns_left=64 gens=693 maxdeg=4", "clp_sec": 9.1, "msolve": "fail", "ms_sec": 151.5}
+{"S": [0, 3, 4, 5, 6, 7, 10], "status9": "O", "unknowns": 70, "minors": 923, "clp": "RESULT substituted=10 unknowns_left=60 gens=512 maxdeg=4", "clp_sec": 8.8, "msolve": "TIMEOUT", "ms_sec": 300.2}
+{"S": [1, 2, 3, 5, 6, 7, 10], "status9": "O", "unknowns": 71, "minors": 759, "clp": "RESULT substituted=10 unknowns_left=61 gens=463 maxdeg=4", "clp_sec": 7.5, "msolve": "fail", "ms_sec": 54.9}
+{"S": [1, 2, 3, 4, 6, 7, 10], "status9": "M_p", "unknowns": 72, "minors": 522, "clp": "TIMEOUT"}
+{"S": [0, 1, 3, 5, 6, 7, 10], "status9": "O", "unknowns": 73, "minors": 712, "clp": "RESULT substituted=7 unknowns_left=66 gens=380 maxdeg=4", "clp_sec": 7.2, "msolve": "fail", "ms_sec": 44.2}
+{"S": [0, 1, 2, 5, 6, 7, 10], "status9": "O", "unknowns": 74, "minors": 655, "clp": "RESULT substituted=6 unknowns_left=68 gens=332 maxdeg=4", "clp_sec": 7.1, "msolve": "fail", "ms_sec": 53.5}
+{"S": [0, 1, 3, 4, 6, 7, 10], "status9": "O", "unknowns": 74, "minors": 550, "clp": "TIMEOUT"}
+{"S": [1, 2, 3, 4, 5, 6, 10], "status9": "O", "unknowns": 74, "minors": 211, "clp": "RESULT substituted=3 unknowns_left=71 gens=483 maxdeg=3", "clp_sec": 3.7, "msolve": "fail", "ms_sec": 80.5}
+{"S": [0, 2, 3, 4, 5, 6, 10], "status9": "O", "unknowns": 75, "minors": 202, "clp": "RESULT substituted=6 unknowns_left=69 gens=446 maxdeg=4", "clp_sec": 5.5, "msolve": "fail", "ms_sec": 70.5}
+{"S": [0, 1, 2, 3, 6, 7, 10], "status9": "O", "unknowns": 76, "minors": 494, "clp": "RESULT substituted=6 unknowns_left=70 gens=643 maxdeg=4", "clp_sec": 7.9, "msolve": "fail", "ms_sec": 112.9}
+{"S": [0, 1, 2, 3, 5, 6, 10], "status9": "O", "unknowns": 78, "minors": 64, "clp": "RESULT substituted=0 unknowns_left=78 gens=366 maxdeg=4", "clp_sec": 2.6, "msolve": "fail", "ms_sec": 68.2}
+{"S": [0, 1, 3, 4, 5, 6, 7], "status9": "O", "unknowns": 79, "minors": 48, "clp": "RESULT substituted=4 unknowns_left=75 gens=337 maxdeg=4", "clp_sec": 4.1, "msolve": "fail", "ms_sec": 160.5}
+{"S": [0, 1, 2, 3, 5, 6, 7], "status9": "O", "unknowns": 81, "minors": 10, "clp": "RESULT substituted=0 unknowns_left=81 gens=317 maxdeg=4", "clp_sec": 2.2, "msolve": "fail", "ms_sec": 58.3}

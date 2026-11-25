@@ -1,0 +1,40 @@
+// Constant-pivot substitution: while some generator g = a*x_v + r with a a nonzero constant and
+// x_v not in r, substitute x_v = -r/a everywhere. No denominators, no branching.
+int k; int v; int nsub = 0; int changed = 1;
+intvec alive = 1:nvars(basering);
+ideal K = J;
+while (changed) {
+  changed = 0;
+  for (k = 1; k <= ncols(K) && !changed; k++) {
+    if (K[k] != 0) {
+      for (v = 1; v <= nvars(basering) && !changed; v++) {
+        if (alive[v] == 1) {
+          poly dv = diff(K[k], var(v));
+          if (dv != 0 && deg(dv) == 0) {
+            if (diff(dv, var(v)) == 0) {
+              poly r = K[k] - dv*var(v);
+              if (diff(r, var(v)) == 0) {
+                ideal img = maxideal(1); img[v] = -r/leadcoef(dv);
+                map phi = basering, img;
+                K = phi(K); K = simplify(K, 2);
+                alive[v] = 0; nsub++; changed = 1;
+                kill img, phi;
+              }
+              kill r;
+            }
+          }
+          kill dv;
+        }
+      }
+    }
+  }
+}
+int left = 0; for (v = 1; v <= nvars(basering); v++) { left = left + alive[v]; }
+int md = 0; for (k = 1; k <= ncols(K); k++) { if (deg(K[k]) > md) { md = deg(K[k]); } }
+print("RESULT substituted=" + string(nsub) + " unknowns_left=" + string(left) + " gens=" + string(ncols(K)) + " maxdeg=" + string(md));
+link l = ":w OUTFILE";
+string vs = ""; for (v = 1; v <= nvars(basering); v++) { if (alive[v]) { if (size(vs) > 0) { vs = vs + ","; } vs = vs + varstr(v); } }
+write(l, vs);
+for (k = 1; k <= ncols(K); k++) { write(l, string(K[k])); }
+close(l);
+quit;
