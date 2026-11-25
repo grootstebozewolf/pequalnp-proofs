@@ -1,0 +1,1 @@
+for c in $(python3 -c "import json;print(' '.join(','.join(map(str,s)) for s in json.load(open('r7/modp8.json'))))"); do echo $c; done | xargs -P 2 -I{} sh -c '../venv/bin/python r7/lift.py 0 900 {} >> r7/liftQ.log 2>&1'
