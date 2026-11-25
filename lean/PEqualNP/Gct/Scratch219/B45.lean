@@ -14,6 +14,17 @@ def dec (m : ℕ) : Finset (Fin 4 × Fin 5) := univ.filter fun x => m.testBit (p
 def CellEmpty (S : Finset (Fin 4 × Fin 5)) : Prop :=
   ∀ (L : Submodule ℂ (Mat 4 5)) (v : Fin 4 × Fin 5 → Mat 4 5), LevelF L → Ech L S v → False
 
+-- The same, for an orbit-minimal pivot set only. The colex minors that close most cells
+-- vanish because of this minimality, so a cell certificate may use it.
+def CellEmptyMin (S : Finset (Fin 4 × Fin 5)) : Prop :=
+  ∀ (L : Submodule ℂ (Mat 4 5)) (v : Fin 4 × Fin 5 → Mat 4 5), LevelF L → Ech L S v →
+    (∀ (σ : Equiv.Perm (Fin 4)) (τ : Equiv.Perm (Fin 5)),
+      wt2 S ≤ wt2 (S.image fun x : Fin 4 × Fin 5 => (σ x.1, τ x.2))) → False
+
+theorem cellEmptyMin_of_cellEmpty (S : Finset (Fin 4 × Fin 5)) (h : CellEmpty S) :
+    CellEmptyMin S :=
+  fun L v hL hE _ => h L v hL hE
+
 -- The three representatives whose pivots contain matrix row 0.
 def fkReps : List ℕ := [127, 1087, 1119]
 
@@ -23,16 +34,16 @@ theorem fk_cells : ∀ m ∈ fkReps, CellEmpty (dec m) := by
   rcases hm with rfl | rfl | rfl <;>
     exact fk_row L hL (by norm_num) _ v hE 0 (by decide)
 
-theorem theoremB (hcells : ∀ m ∈ reps45, m ∉ fkReps → CellEmpty (dec m))
+theorem theoremB (hcells : ∀ m ∈ reps45, m ∉ fkReps → CellEmptyMin (dec m))
     (L : Submodule ℂ (Mat 4 5)) (hL : LevelF L) : Module.finrank ℂ L ≤ 6 := by
   have := finrank_lt_of_cells 7 (fun L hL _ S v hc hE hmin => ?_) L hL
   · omega
   have hr := rep45 S hc hmin
   have hS : S = dec (wt2 S) := eq_decode S
-  rw [hS] at hE
+  rw [hS] at hE hmin
   by_cases hf : wt2 S ∈ fkReps
   · exact fk_cells _ hf L v hL hE
-  · exact hcells _ hr hf L v hL hE
+  · exact hcells _ hr hf L v hL hE hmin
 
 end PEqualNP.Gct.Scratch219.B45
 
