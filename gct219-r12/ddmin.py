@@ -19,6 +19,12 @@ def unit(vs, p, gens):
             return False
         b = open(o).read().replace(' ', '').replace('\n', '') if os.path.exists(o) else ''
         return b.endswith('[1]:')
+CKPT = None
+def ckpt(vs, p, G, stage):
+    if CKPT:
+        open(CKPT, 'w').write(vs + '\n' + p + '\n' + ',\n'.join(G) + '\n')
+        open(CKPT + '.log', 'a').write(json.dumps({'stage': stage, 'size': len(G), 'tests': tests,
+                                                   'sec': round(time.time() - T0, 1)}) + '\n')
 def ddmin(vs, p, G):
     n = 2
     while len(G) >= 2:
@@ -26,13 +32,14 @@ def ddmin(vs, p, G):
         for i in range(0, k, chunk):
             rest = G[:i] + G[i + chunk:]
             if rest and unit(vs, p, rest):
-                G = rest; n = max(n - 1, 2); reduced = True; break
+                G = rest; n = max(n - 1, 2); reduced = True; ckpt(vs, p, G, 'ddmin'); break
         if not reduced:
             if n >= k: break
             n = min(k, 2 * n)
     return G
 if __name__ == '__main__':
-    path = sys.argv[1]; vs, p, G = read_ms(path); t = time.time()
+    path = sys.argv[1]; vs, p, G = read_ms(path); t = time.time(); T0 = t
+    CKPT = path.replace('.ms', '.ckpt.ms')
     assert unit(vs, p, G), 'not unit to begin with'
     # order: by length (shorter first), then shortest unit prefix by bisection
     G = sorted(G, key=len); lo, hi = 1, len(G)
@@ -40,7 +47,7 @@ if __name__ == '__main__':
         m = (lo + hi) // 2
         if unit(vs, p, G[:m]): hi = m
         else: lo = m + 1
-    pre = lo; M = ddmin(vs, p, G[:pre])
+    pre = lo; ckpt(vs, p, G[:pre], 'prefix'); M = ddmin(vs, p, G[:pre])
     out = path.replace('.ms', '.min.ms'); open(out, 'w').write(vs + '\n' + p + '\n' + ',\n'.join(M) + '\n')
     print(json.dumps({'cell': os.path.basename(path), 'gens': len(G), 'prefix': pre, 'support': len(M),
                       'tests': tests, 'sec': round(time.time() - t, 1)}), flush=True)
