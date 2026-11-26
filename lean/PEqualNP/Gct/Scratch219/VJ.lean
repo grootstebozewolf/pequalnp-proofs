@@ -1,9 +1,10 @@
 import PEqualNP.Gct.Scratch219.VJCore
-import Mathlib.Data.Real.Sqrt
+import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Data.Fintype.Pi
 import Mathlib.Logic.Embedding.Basic
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 import Mathlib.Algebra.Module.Submodule.Map
+-- `grind` needs these two for ℂ: `Lean.Grind.IsCharP` and `NoNatZeroDivisors` (to divide by 3).
 import Mathlib.Algebra.CharP.Basic
 import Mathlib.Algebra.Group.Torsion
 

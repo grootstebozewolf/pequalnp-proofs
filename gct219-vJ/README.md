@@ -61,7 +61,7 @@ Every certificate turns out to use only 1–4 evaluations, and all of them are l
 
 | file | role | trusted? |
 |---|---|---|
-| `ws.py`, `charts.py`, `empty.py` | the oracle: restricted cubics, and Gröbner bases of the chart ideals (sympy). All 134 come out ⟨1⟩, so we are on the QED branch, not QEX. | no |
+| `ws.py`, `charts.py`, `empty.py` | the oracle: restricted cubics, and Gröbner bases of the chart ideals (sympy). It checks 30 charts: one representative support per size k = 1..5 (×4 charts) and S = ∅ (10 charts). All come out ⟨1⟩, which chose the QED branch over QEX. The other supports are equivalent under column permutations; `check.py` and Lean cover all 134 directly. | no |
 | `gen.py` → `certs.json` | searches for cofactors over ℚ (python-flint row reduction) | no |
 | `check.py` | independent re-check: recomputes each `E` from the definition of e₃, checks `Σ g E = 1` exactly, and checks that all 134 (support, chart) pairs are covered | no |
 | `genlean.py` → `lean/PEqualNP/Gct/Scratch219/VJCore.lean` | emits one Lean lemma per support. Each chart ends in `linear_combination`, so the Lean kernel re-checks the identity. | no |
@@ -75,7 +75,7 @@ L-gct-219 that is still open. They do not enter here.
 ## Reproduce
 
     cd gct219-vJ
-    python3 charts.py && python3 empty.py   # the oracle: unit ideal for every chart
+    python3 charts.py && python3 empty.py   # the oracle: unit ideal on 30 representative charts
     python3 gen.py                          # certs.json
     python3 check.py                        # independent check
     python3 genlean.py                      # VJCore.lean
@@ -92,9 +92,9 @@ The build has no `sorry`, no `native_decide` and no new axiom. The external comp
 not admitted: each of the 134 chart refutations is an explicit identity that the Lean
 kernel re-checks with `linear_combination`. `VJCore` takes about 90 s on 4 cores.
 
-The bound is sharp. `sharp.py` exhibits a 6-dimensional level space with a 4-dimensional
+The bound appears sharp. `sharp.py` exhibits a 6-dimensional level space with a 4-dimensional
 row-0 part: the sum-zero row 0, plus rows 1–3 supported on column 0 with zero column sum.
-So vJ is exactly the step from 6 to 7.
+`sharp.py` only evaluates it at 5 random points; this is evidence, not a Lean proof. So vJ is the step from 6 to 7.
 
 This is not a submission. The files live in `Gct/Scratch219`, not `Outside/`. The other
 cases of the L-gct-215 tree at dimension 7 are not started: MidCase, mI/eI, HighPair and vK.

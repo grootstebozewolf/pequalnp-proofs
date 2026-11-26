@@ -1,8 +1,6 @@
 import Mathlib.LinearAlgebra.Dual.Lemmas
 import Mathlib.LinearAlgebra.Dimension.Constructions
 import Mathlib.Analysis.Complex.Basic
-import Mathlib.Tactic.LinearCombination
-import Mathlib.Tactic.FinCases
 
 /-! Scratch for L-gct-219, case vJ. The cubic `g3` and the chart lemma.
 
@@ -110,6 +108,6 @@ theorem chart {N : ℕ} (τ : Fin N → P →ₗ[ℂ] ℂ) (inj : ∀ x, (∀ k,
   have e := (sj (Pi.single ⟨k, hk⟩ 1)).choose_spec
   have e' := congrFun e ⟨k', hk'⟩
   simp only [LinearMap.pi_apply] at e'
-  simp only [y, dif_pos hk, e', Pi.single_apply, Subtype.mk.injEq]
+  simp only [y, hk, ↓reduceDIte, e', Pi.single_apply, Subtype.mk.injEq]
 
 end PEqualNP.Gct.Scratch219.VJ
