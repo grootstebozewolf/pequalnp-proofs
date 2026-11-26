@@ -1,3 +1,4 @@
 cells/
 ddmin_*.log
 retry_oom.log
+sup_*.log
