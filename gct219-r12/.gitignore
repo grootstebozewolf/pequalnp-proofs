@@ -3,3 +3,4 @@ ddmin_*.log
 retry_oom.log
 sup_*.log
 sup_*.log
+maclift_*.log
